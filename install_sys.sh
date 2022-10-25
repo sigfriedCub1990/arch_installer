@@ -102,6 +102,7 @@ n
 
 w
 EOF
+
 partprobe "$hd"
 
 # Add a suffix "p" in case with have a NVMe controller chip
@@ -116,7 +117,7 @@ mount "${hd}3" /mnt
 if [ "$uefi" = 1 ]; then
 	mkfs.fat -F32 "${hd}1"
 	mkdir -p /mnt/boot/efi
-	mount "{hd}1" /mnt/boot/efi
+	mount "${hd}1" /mnt/boot/efi
 fi
 
 # Install Arch
@@ -126,7 +127,6 @@ genfstab -U /mnt >>/mnt/etc/fstab
 # Persist values for the next script
 echo "$uefi" >/mnt/var_uefi
 echo "$hd" >/mnt/var_hd
-
 mv comp /mnt/comp
 
 curl https://raw.githubusercontent.com/sigfriedcub1990/arch_installer/master/install_chroot.sh >/mnt/install_chroot.sh
@@ -136,12 +136,14 @@ arch-chroot /mnt bash install_chroot.sh
 rm /mnt/var_uefi
 rm /mnt/var_hd
 rm /mnt/install_chroot.sh
+rm /mnt/comp
 
 dialog --title "To reboot or not to reboot?" --yesno \
-	"Congrats! Installation is done! \n\n
+	"Congrats! Installation is done! \n\n\
     Do you want to reboot your computer?" 20 60
 
 response=$?
+
 case $response in
 0) reboot ;;
 1) clear ;;
