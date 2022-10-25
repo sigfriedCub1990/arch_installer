@@ -14,6 +14,10 @@ tools,lxappearance,Theme switcher for GTK+
 tools,xcape,Configure modifier keys to act as other keys
 tools,ripgrep,Faster alternative to grep
 tools,fd,Faster alternative to find
+tools,asdf-vm,Manage versions of different languages
+tools,lazydocker,Manage Docker container the lazy way
+tools,flameshot-git,Screenshot tool
+tools,fasd,Productivity booster
 tmux,tmux,Terminal multiplexer
 notifier,dunst,Notification system
 notifier,libnotify,Notifier
@@ -29,11 +33,8 @@ zsh,zsh,Unix shell (Z-Shell)
 zsh,zsh-completions,Additional completions for Zsh
 zsh,zsh-syntax-highlighting,Syntax highlighting for ZSH
 neovim,neovim,Editor... and much more
-neovim,python-neovim,Python for neovim
-neovim,python2-neovim,Python2 for neovim (AUR)
-neovim,ruby-neovim,Ruby for neovim (AUR)
-neovim,nodejs-neovim,Nodejs for neovim (AUR)
-js,nodejs,Nodejs (for coc.vim)
-js,yarn,Dependency manager (for coc.vim)
 alacritty,alacritty,GPU accelerated Terminal
 firefox,firefox-developer-edition,Browser Firefox
+work,zoom,Video conferences
+work,slack-desktop,Team communication
+entertainment,stremio-beta,Freedom to stream
