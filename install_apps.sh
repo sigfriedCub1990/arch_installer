@@ -50,27 +50,27 @@ dialog --title "Let's go" --msgbox \
 
 c=0
 echo "$packages" | while read -r line; do
-    c=$(( "$c" + 1 ))
+	c=$(("$c" + 1))
 
-    dialog --title "Arch Linux Installation" --infobox \
-        "Downloading and installing program $c out of $count: $line..." \
-        8 70
+	dialog --title "Arch Linux Installation" --infobox \
+		"Downloading and installing program $c out of $count: $line..." \
+		8 70
 
-    ((pacman --noconfirm --needed -S "$line" > /tmp/arch_install 2&>1) \
-        || echo "$line" >> /tmp/aur_queue) \
-        || echo "$line" >> /tmp/arch_install_failed
+	( (pacman --noconfirm --needed -S "$line" >/tmp/arch_install 2>&1) ||
+		echo "$line" >>/tmp/aur_queue) ||
+		echo "$line" >>/tmp/arch_install_failed
 
-    if [ "$line" = "zsh" ]; then
-        # Set ZSH as the default shell for our user
-        chsh -s "$(which zsh)" "$name"
-    fi
+	if [ "$line" = "zsh" ]; then
+		# Set ZSH as the default shell for our user
+		chsh -s "$(which zsh)" "$name"
+	fi
 
-    if [ "$line" = "networkmanager" ]; then
-        systemctl enable NetworkManager.service
-    fi
+	if [ "$line" = "networkmanager" ]; then
+		systemctl enable NetworkManager.service
+	fi
 done
 
-echo "%wheel ALL=(ALL) ALL" >> /etc/sudoers
+echo "%wheel ALL=(ALL) ALL" >>/etc/sudoers
 
 curl https://raw.githubusercontent.com/sigfriedcub1990/arch_installer/master/install_user.sh >/tmp/install_user.sh
 
