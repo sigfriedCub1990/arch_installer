@@ -1,12 +1,18 @@
 essential,xorg,X server
 essential,xorg-xinit,Display server boot
+essential,xf86-video-fbdev,Video drivers
 essential,man,Manual
 essential,man-pages,Manual pages
+sound,pipewire,Pipewire
+sound,pipewire-pulse,Pipewire pulse plugin
+sound,pipewire-alsa,Pipewire alsa plugin
+sound,sof-firmware,Firmware to make ALSA work
 network,openssh,Remote login tool for SSH protocol
 network,networkmanager,Network manager
 tools,rsync,Synchronizing files across computers
 tools,arandr,xrandr GUI
 tools,xsel,Manipulate the X selection
+tools,xclip,CLI to clipboard
 tools,fzf,Command line fuzzy finder
 tools,scrot,Screenshot software
 tools,udiskie,Automount devices
@@ -18,6 +24,14 @@ tools,asdf-vm,Manage versions of different languages
 tools,lazydocker,Manage Docker container the lazy way
 tools,flameshot-git,Screenshot tool
 tools,fasd,Productivity booster
+tools,redshift,Adjust screen brightness
+tools,picom,Compositor for X transparency
+tools,unclutter,Hide mouse after a short period of time
+tools,polkit,Control system wide privilegies
+tools,ncdu,Disk space analyzer
+tools,docker,Docker
+tools,docker-compose,Docker Compose
+tools,tealdeer,tldr implementation in Rust
 tmux,tmux,Terminal multiplexer
 notifier,dunst,Notification system
 notifier,libnotify,Notifier
@@ -26,15 +40,23 @@ git,git-delta,Human readable git diff
 i3,i3-wm,i3 window tile manager
 i3,polybar,status bar
 i3,i3lock,i3 lock monitor
-i3,dmenu,Dynamic menu for X
+i3,rofi,dmenu replacement
 i3,feh,X11 image viewer
 i3,arc-gtk-theme,Desktop themes
+i3,xdg-utils,Allow application to interact with desktop
 zsh,zsh,Unix shell (Z-Shell)
 zsh,zsh-completions,Additional completions for Zsh
 zsh,zsh-syntax-highlighting,Syntax highlighting for ZSH
-neovim,neovim,Editor... and much more
+zsh,antibody,ZSH plugin manager
+zsh,zsh-theme-powerlevel10k,ZSH plugin manager
+neovim,neovim,The best editor
 alacritty,alacritty,GPU accelerated Terminal
-firefox,firefox-developer-edition,Browser Firefox
-work,zoom,Video conferences
-work,slack-desktop,Team communication
 entertainment,stremio-beta,Freedom to stream
+utilities,anki,Spaced repetition tool
+utilities,newsboat,RSS feed reader
+utilities,zathura,PDF Reader
+utilities,zathura-pdf-mupdf,Zathura extension to read PDF
+utilities,exa,A modern ls
+utilities,bat,A cat with wings
+firefox,firefox-developer-edition,Firefox browser
+brave,brave-bin,Brave browser
